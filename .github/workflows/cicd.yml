@@ -1,7 +1,8 @@
 name: CICD
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
 
@@ -10,4 +11,18 @@ jobs:
     steps:
       - name: checkout the code
         run: echo "check out the code"
-  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build docker container
+        run: echo "build docker container" 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test the container
+        run: echo "test the container"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy the container
+        run: echo "deploy the container"      
