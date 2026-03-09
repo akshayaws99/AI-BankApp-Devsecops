@@ -7,19 +7,23 @@ on:
 jobs:
 
   code:
+    runs-on: ubutu-latest
     steps:
        - name: checkout the code
-         step: echo "checkout the code"
+         run: echo "checkout the code"
         
    build:
+     runs-on: ubutu-latest
      steps:
        - name: "Build docker container"
          step: echo " build docker contianer"
    test:
+      runs-on: ubutu-latest
      steps:
        - name: test the container
-         step: echo "test the container "
+         run: echo "test the container "
    deploy:
+     runs-on: ubutu-latest
      steps:
        - name: deploy the container
          step: echo "deploy the container"
