@@ -5,6 +5,15 @@ on:
   push:
     branches: [ main ]
 
+    # basically defining this will provide options in the actions tab
+      inputs :
+         environment :
+           options:
+             - dev
+             - stage
+             - prod
+
+    #purpose of path is that actions will only run when changes are made to the files with  the specific type. Basically its the filter 
     paths:
        - '**.html'
        - '**.yml'
