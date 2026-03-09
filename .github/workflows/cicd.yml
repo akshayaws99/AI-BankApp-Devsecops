@@ -6,8 +6,8 @@ on:
 jobs:
 
  code:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout the code
-      run: echo "check out the code"
+   runs-on: ubuntu-latest
+   steps:
+     - name: checkout the code
+       run: echo "check out the code"
   
