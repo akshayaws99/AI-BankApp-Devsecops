@@ -1,11 +1,8 @@
 name: CICD
 
 on:
-  workflow_dispatch: 
-  
-
-    # basically defining this will provide options in the actions tab
-    inputs:
+  workflow_dispatch:  
+   inputs:
       environment:
         description: this is the env where workflow runs
         default: dev
@@ -15,7 +12,10 @@ on:
           - dev
           - stag
           - prod
-         
+          
+ 
+    # basically defining this will provide options in the actions tab
+   
     #purpose of path is that actions will only run when changes are made to the files with  the specific type. Basically its the filter 
     #paths:
      # - '**.html'
