@@ -1,0 +1,26 @@
+#this is name of the workflow which is displayed in the actions tab
+name: CICD
+
+on:
+ workflow_dispatch:
+
+jobs:
+
+  code:
+    steps:
+       - name: checkout the code
+         step: echo "checkout the code"
+        
+   build:
+     steps:
+       - name: "Build docker container"
+         step: echo " build docker contianer"
+   test:
+     steps:
+       - name: test the container
+         step: echo "test the container "
+   deploy:
+     steps:
+       - name: deploy the container
+         step: echo "deploy the container"
+  
