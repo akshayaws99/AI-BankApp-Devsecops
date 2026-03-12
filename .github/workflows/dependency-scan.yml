@@ -1,0 +1,24 @@
+#Scan Java libraries for vulnerabilities using OWASP Dependency Check
+name: dependency-scan
+
+on: 
+    workflow_call:
+
+
+jobs:
+    dependency-scan:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v4
+            
+            - name: Setup Java
+              uses: actions/setup-java@v4
+              with:
+               distribution: temurin
+               java-version: 21
+            
+            - name: run owasp dependency check
+              run : mvn org.owasp:dependency-check-maven:check
+
+              

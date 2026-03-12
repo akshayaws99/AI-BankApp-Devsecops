@@ -1,0 +1,12 @@
+services:
+
+  bankapp:
+
+    image: ${DOCKERHUB_USER}/AI-BANKAPP-DEVOPS:latest
+
+    container_name: bankapp
+
+    ports:
+      - "8080:8080"
+
+    restart: always

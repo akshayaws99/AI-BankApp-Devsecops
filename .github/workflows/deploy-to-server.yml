@@ -1,0 +1,40 @@
+name: deploy app to server
+
+on:
+    workflow_call:
+        secrets:
+            EC2_SSH_HOST:
+                required: true
+            EC2_SSH_USERNAME:
+                required: true
+            EC2_SSH_PRIVATE_KEY:
+                required: true    
+            image-name:
+                required: true
+                
+            app-port:
+                required: true
+                   
+jobs:
+    deploy-to-server:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout-code
+              uses: actions/checkout@v4
+            
+            - name: ssh to server and create a folder
+              uses: appleboy/ssh-action@v1
+              with:
+                host: ${{secrets.EC2_SSH_HOST}}
+                username: ${{secrets.EC2_SSH_USERNAME}}
+                key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
+                script: |
+                  sudo apt update
+                  sudo apt-get install docker.io docker-compose-v2 -y
+                  sudo usermod -aG docker $USER && newgrp docker
+                  #echo "${sudo systemctl status docker}"
+                  echo " starting deployment"
+                  mkdir -p /devops    
+                  cd ~/devops
+                  echo "Welcome to server"
+

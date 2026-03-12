@@ -1,0 +1,17 @@
+#static security analysis for java source code
+
+name: sast-scan
+
+on: 
+    workflow_call:
+
+jobs:
+
+    sast-scan:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: checkout-code
+              uses: actions/checkout@v4
+            - name: Run semgrep
+              uses: semgrep/semgrep-action@v1

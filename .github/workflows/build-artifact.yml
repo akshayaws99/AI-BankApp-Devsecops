@@ -1,0 +1,22 @@
+#Build the Java JAR file
+name: build-artifact
+
+on:
+   workflow_call:
+
+jobs:
+   code-quality:
+      runs-on: ubuntu-latest
+      steps:
+      
+        - name: code checkout
+          uses: actions/checkout@v4
+
+        - name: Setup Java
+          uses: actions/setup-java@v4
+          with:
+           distribution: temurin
+           java-version: 21
+        - name: build jar
+          run: mvn clean package
+      

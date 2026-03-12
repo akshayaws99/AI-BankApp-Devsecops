@@ -1,0 +1,32 @@
+#Code compiles successfully
+#Code follows style guidelines
+#Basic static analysis is done
+
+name: code-quality
+
+on:
+   workflow_call:
+
+jobs:
+   code-quality:
+      runs-on: ubuntu-latest
+      steps:
+      
+        - name: code checkout
+          uses: actions/checkout@v4
+      
+        - name: setup java
+          uses: actions/setup-java@v4
+          with:
+           distribution: temurin
+           java-version: 21 
+        
+        - name: Build project
+          run: mvn clean compile
+        
+        - name: Run checkstyle
+          run : mvn checkstyle:check      
+
+      
+      
+
