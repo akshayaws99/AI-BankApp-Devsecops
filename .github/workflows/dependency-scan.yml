@@ -17,11 +17,17 @@ jobs:
               with:
                distribution: temurin
                java-version: 21
+
+            - name: Verify secret exists
+              run: echo "Secret length is ${#NVD_API_KEY}"
+              env:
+                NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
             
             - name: OWASP Dependency Scan
               run: |
                     mvn org.owasp:dependency-check-maven:check \
                     -DnvdApiKey=${{ secrets.NVD_API_KEY }} \
+                    -DnvdApiDelay=6000 \
                     -Dformat=HTML
 
               
