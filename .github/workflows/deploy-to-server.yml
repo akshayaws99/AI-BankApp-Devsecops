@@ -5,7 +5,7 @@ on:
         secrets:
             EC2_SSH_HOST:
                 required: true
-            EC2_SSH_USERNAME:
+            EC2_SSH_USER:
                 required: true
             EC2_SSH_PRIVATE_KEY:
                 required: true    #looks for keys
