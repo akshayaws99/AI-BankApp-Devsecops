@@ -34,7 +34,7 @@ jobs:
               run: |
                     mvn org.owasp:dependency-check-maven:check \
                     -DnvdApiKey=${{ secrets.NVD_API_KEY }} \
-                    -DnvdApiDelay=15000 \
+                    -DnvdApiDelay=6000 \
                     -Dformat=HTML
 
               
