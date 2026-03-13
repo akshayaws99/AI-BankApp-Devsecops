@@ -28,7 +28,7 @@ jobs:
         needs: dependency-scan
         secrets: inherit
     image-scan:
-        uses: ./.github/workflows/image-scan.yml
+        uses: ./.github/workflows/Image-scan.yml
         needs: docker-build
         secrets: inherit
     
