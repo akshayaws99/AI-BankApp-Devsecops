@@ -28,13 +28,14 @@ jobs:
               uses: actions/cache@v3
               with:
                path: ~/.m2/repository/org/owasp/dependency-check-data
-               key: dependency-check    
+               key: dependency-check-cache  
 
             - name: OWASP Dependency Scan
               run: |
                     mvn org.owasp:dependency-check-maven:check \
                     -DnvdApiKey=${{ secrets.NVD_API_KEY }} \
                     -DnvdApiDelay=30000 \
+                    -DnvdMaxRetryCount=10 \
                     -Dformat=HTML
 
               
