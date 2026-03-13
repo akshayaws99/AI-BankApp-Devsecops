@@ -22,7 +22,7 @@ jobs:
     dependency-scan:
         uses: ./.github/workflows/dependency-scan.yml
         needs: sast-scan
-        inherit: true
+        secrets: inherit
     
     docker-build:
         uses: ./.github/workflows/docker-build.yml
