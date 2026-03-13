@@ -19,7 +19,6 @@ jobs:
                java-version: 21
             
             - name: run owasp dependency check
-              run : |
-                 mvn org.owasp:dependency-check-maven:check -DskipNvd=true
+              run : mvn org.owasp:dependency-check-maven:check -DskipNvd=true
 
               
