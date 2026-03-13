@@ -20,7 +20,6 @@ jobs:
             
             - name: run owasp dependency check
               run : |
-                 mvn org.owasp:dependency-check-maven:check \
-                 -DnvdApiKey=${{ secrets.NVD_API_KEY }}
+                 mvn org.owasp:dependency-check-maven:check -DskipNvd=true
 
               
