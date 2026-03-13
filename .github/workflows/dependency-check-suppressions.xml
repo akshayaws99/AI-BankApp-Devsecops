@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.2.xsd">
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-16724</notes>
+        <cve>CVE-2019-16724</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-14220</notes>
+        <cve>CVE-2019-14220</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-14814</notes>
+        <cve>CVE-2019-14814</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-11280</notes>
+        <cve>CVE-2019-11280</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2018-17789</notes>
+        <cve>CVE-2018-17789</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-5521</notes>
+        <cve>CVE-2019-5521</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2018-11200</notes>
+        <cve>CVE-2018-11200</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-4565</notes>
+        <cve>CVE-2019-4565</cve>
+    </suppress>
+
+    <suppress>
+        <notes>Ignoring vulnerability CVE-2019-4505</notes>
+        <cve>CVE-2019-4505</cve>
+    </suppress>
+
+</suppressions>

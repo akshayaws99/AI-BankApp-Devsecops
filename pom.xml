@@ -82,6 +82,16 @@
 
 	<build>
     <plugins>
+	    <plugin>
+    <groupId>org.owasp</groupId>
+    <artifactId>dependency-check-maven</artifactId>
+    <version>9.0.9</version>
+    <configuration>
+        <suppressionFiles>
+            <suppressionFile>dependency-check-suppressions.xml</suppressionFile>
+        </suppressionFiles>
+    </configuration>
+</plugin>
 
         <plugin>
             <groupId>org.springframework.boot</groupId>
