@@ -50,7 +50,7 @@ jobs:
                 script: |
                    echo "running app"
                    export DOCKERHUB_USER= ${{vars.DOCKERHUB_USER}}  
-                   export DOCKER_TAG=latest
+                   export DOCKER_TAG= ${{github.sha}}
                    echo "${{ vars.DOCKERHUB_USER }}"
                    echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login  -u "${{ vars.DOCKERHUB_USER }}" --password-stdin
                    cd ~/devops
