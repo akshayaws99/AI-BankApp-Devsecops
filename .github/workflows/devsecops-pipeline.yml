@@ -4,6 +4,7 @@ on:
    push:
       branches: [main]
 
+
 jobs:
 
     code-quality:
@@ -12,6 +13,7 @@ jobs:
     secrets-scan:
        uses: ./.github/workflows/secrets-scan.yml
        needs: code-quality
+       secrets: inherit
     
     sast-scan:
        uses: ./.github/workflows/sast-scan.yml
@@ -24,13 +26,16 @@ jobs:
     docker-build:
         uses: ./.github/workflows/docker-build.yml
         needs: dependency-scan
-    
+        secrets: inherit
     image-scan:
         uses: ./.github/workflows/image-scan.yml
         needs: docker-build
+        secrets: inherit
     
     deploy-to-server:
         uses: ./.github/workflows/deploy-to-server.yml
+        needs: image-scan
+        secrets: inherit
     
 
 
