@@ -8,12 +8,8 @@ on:
             EC2_SSH_USERNAME:
                 required: true
             EC2_SSH_PRIVATE_KEY:
-                required: true    
-            image-name:
-                required: true
-                
-            app-port:
-                required: true
+                required: true    #looks for keys
+            
                    
 jobs:
     deploy-to-server:
