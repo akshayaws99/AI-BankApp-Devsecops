@@ -22,4 +22,4 @@ jobs:
                 ${{ vars.DOCKERHUB_USER }}/AI-BANKAPP-DEVOPS:${{ github.sha }} 
                 ${{ vars.DOCKERHUB_USER }}/AI-BANKAPP-DEVOPS:latest
         
-
+# updated the dockerhub user and token
