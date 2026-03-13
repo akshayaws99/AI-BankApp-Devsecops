@@ -30,7 +30,30 @@ jobs:
                   sudo usermod -aG docker $USER && newgrp docker
                   #echo "${sudo systemctl status docker}"
                   echo " starting deployment"
-                  mkdir -p /devops    
+                  mkdir -p ~/devops    
                   cd ~/devops
                   echo "Welcome to server"
+            - name : Copy the docker-compose file
+              uses: appleboy/scp-action@v1
+              with:
+                host: ${{ secrets.EC2_SSH_HOST }}
+                username: ${{ secrets.EC2_SSH_USER }}
+                key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+                source: docker-compose.yml
+                target: ~/devops
+            - name: SSH to Prod server and create app folder
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                host: ${{ secrets.EC2_SSH_HOST }}
+                username: ${{ secrets.EC2_SSH_USER }}
+                key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+                script: |
+                   echo "running app"
+                   export DOCKERHUB_USER= ${{vars.DOCKERHUB_USER}}  
+                   export DOCKER_TAG=latest
+                   echo "${{ vars.DOCKERHUB_USER }}"
+                   echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login  -u "${{ vars.DOCKERHUB_USER }}" --password-stdin
+                   cd ~/devops
+                   DOCKERHUB_USER=${{ vars.DOCKERHUB_USER }}
+                   docker compose up -d --build --force-recreate   
 

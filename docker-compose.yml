@@ -2,8 +2,7 @@ services:
 
   bankapp:
 
-    image: ${DOCKERHUB_USER}/AI-BANKAPP-DEVOPS:latest
-
+    image: ${DOCKERHUB_USER}/ai-bankapp-devsecops:${{ github.sha }}
     container_name: bankapp
 
     ports:
