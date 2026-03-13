@@ -37,6 +37,7 @@ jobs:
         uses: ./.github/workflows/deploy-to-server.yml
         needs: image-scan
         secrets: inherit
+    #add secrets inherit to all the jobs so that we can use the secrets in any of the job without defining it again and again
     
 
 
