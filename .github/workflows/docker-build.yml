@@ -19,7 +19,7 @@ jobs:
           with:
             push: true
             tags: |
-                ${{ vars.DOCKERHUB_USER }}/AI-BANKAPP-DEVOPS:${{ github.sha }} 
-                ${{ vars.DOCKERHUB_USER }}/AI-BANKAPP-DEVOPS:latest
+                ${{ vars.DOCKERHUB_USER }}/ai-bankapp-devsecops:${{ github.sha }} 
+                ${{ vars.DOCKERHUB_USER }}/ai-bankapp-devsecops:latest
         
 # updated the dockerhub user and token
