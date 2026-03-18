@@ -25,4 +25,4 @@ jobs:
                  severity: 'CRITICAL'
                  exit-code: 1
 
-           #updated the dockerhub user and token      
+           #updated the dockerhub user credentials   
