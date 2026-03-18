@@ -71,8 +71,8 @@ jobs:
 
                     echo "Setting environment variables..."   
 
-                    export MYSQL_HOST=${{ secrets.MYSQL_HOST }}
-                    export MYSQL_PORT=3306
+                    export MYSQL_HOST= 172.31.9.36
+                    export MYSQL_PORT= 3306
                     export MYSQL_DATABASE=bankappdb
                     export MYSQL_USER=${{ secrets.MYSQL_USER }}
                     export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}
