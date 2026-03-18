@@ -2,7 +2,7 @@
 FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY . .
-RUN RUN mvn clean package -DskipTests && cp target/*SNAPSHOT.jar target/app.jar
+RUN mvn clean package -DskipTests && cp target/*SNAPSHOT.jar target/app.jar
 RUN ls -l /app/target
 
 # Stage 2: Run
