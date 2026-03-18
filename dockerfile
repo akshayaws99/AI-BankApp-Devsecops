@@ -7,7 +7,7 @@ RUN mvn clean package -DskipTests
 # Stage 2: Run
 FROM eclipse-temurin:21-jdk-jammy
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/*.jar bankapp.jar
 
 EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "bankapp.jar"]
