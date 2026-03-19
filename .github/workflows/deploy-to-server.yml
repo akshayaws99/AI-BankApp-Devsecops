@@ -85,3 +85,5 @@ jobs:
                       -e MYSQL_USER=$MYSQL_USER \
                       -e MYSQL_PASSWORD=$MYSQL_PASSWORD \
                       ${{ vars.DOCKERHUB_USER }}/ai-bankapp-devsecops:latest
+
+                #added ip address
